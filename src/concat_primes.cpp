@@ -1,7 +1,7 @@
 /** 
     @mainpage Concat Primes
 
-    @author Author
+    @Kylee Hillman, Preston Turnage
 
     What does this program do in short? Perhaps the name of the project goes here?
 */
@@ -51,8 +51,13 @@ int main(int argc, char *argv[]){
         cout<<"Unit Test 1 passed\n";
         assert(get_slice_of_5(concat_primes, 6) == "13171");
         cout<<"Unit Test 2 passed\n";
+        assert(get_slice_of_5(concat_primes, 10) == "19232");
+        cout<<"Unit Test 3 passed\n";
+        assert(get_slice_of_5(concat_primes, 120) == "92332");
+        cout<<"Unit Test 4 passed\n";
+        assert(get_slice_of_5(concat_primes, 998) == "91");
+        cout<<"Unit Test 5 passed\n";
         
-        //Please add 3 more unit test here/
     } else{
         cout<< "Please input n: ";
         while(std::cin >> n)
