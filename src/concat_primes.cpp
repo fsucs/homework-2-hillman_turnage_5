@@ -31,17 +31,20 @@ std::string get_concatenated_primes()
     
     //int start = 2;
     //test bool = false;
-    bool flag1[] = {false};
+    bol flag1 = true;
     while (concat_primes.length() < 1000)
        {
        for (i = 2, i < concat_primes.length(), i++)
           {
-          for (j = 2, j < i, j++)
+             do 
              {
-             if ((i % j == 0);
-                flag1[j] = true;
+                if ((i % j == 0);
+                   {
+                   flag1 = false
+                   }
              }
-          if (
+             while (bool = false);
+          
     return concat_primes.substr(0, 1000);
 }
 
