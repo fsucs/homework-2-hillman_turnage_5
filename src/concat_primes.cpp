@@ -28,8 +28,20 @@
 std::string get_concatenated_primes()
 {
     std::string concat_primes = "";
-    //Complete this function
-
+    
+    //int start = 2;
+    //test bool = false;
+    bool flag1[] = {false};
+    while (concat_primes.length() < 1000)
+       {
+       for (i = 2, i < concat_primes.length(), i++)
+          {
+          for (j = 2, j < i, j++)
+             {
+             if ((i % j == 0);
+                flag1[j] = true;
+             }
+          if (
     return concat_primes.substr(0, 1000);
 }
 
