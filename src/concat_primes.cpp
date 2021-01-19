@@ -17,7 +17,9 @@
 
 #include<iostream>
 #include<string>
-
+#include<cmath>
+#include<assert.h>
+#include<sstream>
 
 /** \brief Brief function explaination
    
@@ -27,40 +29,23 @@
 */
 std::string get_concatenated_primes()
 {
-    std::string concat_primes = "";
     
-std::string concat_primes = "23";
-    //std::string starting_string = "23";
+   std::string concat_primes = "23";
 
-    int prime_num;
-    int prime_num2;
-    for (int i = 1; i < 15; i++)
-       {
-       int flag = 0;
-       prime_num = (6*i) - 1;
-       prime_num2 = (6*i) + 1;
-          int divisor = 3; 
-          do
-          {
-              if (prime_num % divisor == 0)
-                 {
-                    flag = 1;
-                    std::cout<< "ghjk";
-                 }
-                 else if (prime_num2 % divisor == 0)
-                 {
-                     flag = 1;
-                 }
-                 else 
-                    divisor++;
-          } while ((divisor < (prime_num2/2)) && (flag == 0));
-        
-       if (flag = 1)
-          continue;
-       else
-          concat_primes = concat_primes + std::to_string (prime_num) + std::to_string (prime_num2); 
-       }
- 
+   for (int i = 5; i < 1989; i++)
+   {
+   int flag = 0;
+      for (int j = 2; j <= sqrt(i); j++)
+      {
+         if (i % j == 0)
+            flag = 1;
+      }
+      if (flag == 0)
+	concat_primes =
+	  concat_primes + std::to_string(i);
+   }
+   concat_primes.erase(1000, 1003);
+
  std:: cout << concat_primes.length() << std::endl;
  std:: cout << concat_primes << std::endl;
           
