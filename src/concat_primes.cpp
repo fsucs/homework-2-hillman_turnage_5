@@ -29,21 +29,40 @@ std::string get_concatenated_primes()
 {
     std::string concat_primes = "";
     
-    //int start = 2;
-    //test bool = false;
-    bol flag1 = true;
-    while (concat_primes.length() < 1000)
+std::string concat_primes = "23";
+    //std::string starting_string = "23";
+
+    int prime_num;
+    int prime_num2;
+    for (int i = 1; i < 15; i++)
        {
-       for (i = 2, i < concat_primes.length(), i++)
+       int flag = 0;
+       prime_num = (6*i) - 1;
+       prime_num2 = (6*i) + 1;
+          int divisor = 3; 
+          do
           {
-             do 
-             {
-                if ((i % j == 0);
-                   {
-                   flag1 = false
-                   }
-             }
-             while (bool = false);
+              if (prime_num % divisor == 0)
+                 {
+                    flag = 1;
+                    std::cout<< "ghjk";
+                 }
+                 else if (prime_num2 % divisor == 0)
+                 {
+                     flag = 1;
+                 }
+                 else 
+                    divisor++;
+          } while ((divisor < (prime_num2/2)) && (flag == 0));
+        
+       if (flag = 1)
+          continue;
+       else
+          concat_primes = concat_primes + std::to_string (prime_num) + std::to_string (prime_num2); 
+       }
+ 
+ std:: cout << concat_primes.length() << std::endl;
+ std:: cout << concat_primes << std::endl;
           
     return concat_primes.substr(0, 1000);
 }
