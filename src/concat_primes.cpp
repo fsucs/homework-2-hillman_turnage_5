@@ -29,10 +29,9 @@
 */
 std::string get_concatenated_primes()
 {
-    
    std::string concat_primes = "23";
 
-   for (int i = 5; i < 1989; i++)
+   for (int i = 5; concat_primes.length() <= 1000; i++)
    {
    int flag = 0;
       for (int j = 2; j <= sqrt(i); j++)
@@ -44,8 +43,6 @@ std::string get_concatenated_primes()
 	concat_primes =
 	  concat_primes + std::to_string(i);
    }
-   concat_primes.erase(1000, 1003);
-
  std:: cout << concat_primes.length() << std::endl;
  std:: cout << concat_primes << std::endl;
           
