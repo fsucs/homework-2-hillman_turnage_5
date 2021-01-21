@@ -36,16 +36,26 @@
  */
 std::string get_concatenated_primes()
 {
+   /* initiate string with the first two prime numbers so 
+   the sqaure root function can work properly and not 
+   cause errors to the loop since sqaure root of 2 and 
+   3 is less than 2 */
    std::string concat_primes = "23";
 
+   //iterates through all numbers starting with 5 adding
+   //each one that is deemed prime to the string
    for (int i = 5; concat_primes.length() <= 1000; i++)
    {
-   int flag = 0;
+   int flag = 0;  //used to identify prime numbers
+      /*(check to see if each number startimng with 5 is
+      prime by seeing if it is divisbale by all numbers 
+      up to its sqaure root*/
       for (int j = 2; j <= sqrt(i); j++)
       {
          if (i % j == 0)
-            flag = 1;
+            flag = 1;  //flaging nonprime numbers
       }
+      //adding each new prime number to string
       if (flag == 0)
 	concat_primes =
 	  concat_primes + std::to_string(i);
@@ -63,11 +73,11 @@ std::string get_slice_of_5(const std::string & primes, const int index)
 // initialize string which will hold the slice of 5
     std::string ret = "";
 
-/**
- * for loop which adds digits from the concatenated prime string to the
- * slice of five string which will be returned
- * loop ensures that a max of 5 digits will be returned and that the boundary
- * of 1000 will not be passed.
+/*
+  for loop which adds digits from the concatenated prime string to the
+  slice of five string which will be returned
+  loop ensures that a max of 5 digits will be returned and that the boundary
+  of 1000 will not be passed.
  */
     for (int i = index; (i < (index + 5) && i < 1000); i++)
     {
