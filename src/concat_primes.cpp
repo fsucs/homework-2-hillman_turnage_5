@@ -50,15 +50,14 @@ std::string get_concatenated_primes()
       /*(check to see if each number startimng with 5 is
       prime by seeing if it is divisbale by all numbers 
       up to its sqaure root*/
-      for (int j = 2; j <= sqrt(i); j++)
+      for (int iDivisor = 2; iDivisor <= sqrt(i); iDivisor++)
       {
-         if (i % j == 0)
+         if (i % iDivisor == 0)
             flag = 1;  //flaging nonprime numbers
       }
       //adding each new prime number to string
       if (flag == 0)
-	concat_primes =
-	  concat_primes + std::to_string(i);
+	concat_primes = concat_primes + std::to_string(i);
    }         
     return concat_primes.substr(0, 1000);
 }
@@ -71,23 +70,23 @@ std::string get_slice_of_5(const std::string & primes, const int index)
 {
 
 // initialize string which will hold the slice of 5
-    std::string ret = "";
+    std::string strRet = "";
 
 /*
-  for loop which adds digits from the concatenated prime string to the
-  slice of five string which will be returned
-  loop ensures that a max of 5 digits will be returned and that the boundary
-  of 1000 will not be passed.
+ * for loop which adds digits from the concatenated prime string to the
+ * slice of five string which will be returned
+ * loop ensures that a max of 5 digits will be returned and that the boundary
+ * of 1000 will not be passed.
  */
     for (int i = index; (i < (index + 5) && i < 1000); i++)
     {
 
 // adding digits to slice of 5
-	    ret += primes[i];
+	    strRet += primes[i];
     } 
 
 // returning slice of 5
-   return ret;
+   return strRet;
 }
 
 int main(int argc, char *argv[]){
