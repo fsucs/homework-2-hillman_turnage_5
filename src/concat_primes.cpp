@@ -16,14 +16,16 @@
 
 
 #include<iostream>
-#include<string>
-#include<cmath>
+#include<string> 
+#include<cmath>  //for sqrt function
 #include<assert.h>
-#include<sstream>
 
-/** \brief Brief function explaination
+/** \This function generates a 1003 character list of prime numbers 
    
-   And a long one...
+    This function loops through numbers and analyzes if they are prime or not.
+    It then takes all the numbers deemed as primes and adds them to the string
+    of primes. The loop runs until there are 1000 characters in the string
+    
 
     @return std::string
 */
