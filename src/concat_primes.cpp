@@ -1,17 +1,21 @@
-/** 
+/**
     @mainpage Concat Primes
 
     @Kylee Hillman, Preston Turnage
 
-    What does this program do in short? Perhaps the name of the project goes here?
+    Prints a 5 character section of digits from prime numbers to the screen
+    based on a user-input index from 1 to 1000.
 */
 
 /** \file concat_primes.cpp
-    \brief Brief explanation...
-    
-    Long explination goes here...
+    \brief Prints segments of prime numbers based on user input
 
-    Requires: C++11
+    This program creates and concatenates a string of prime numbers such that
+    the string is 1000 numbers long. After that the program accepts user input
+    in the form of an integer between 1 and 1000 and subsequently prints to
+    the screen the 5 character long segment of corresponding digits.
+
+ Requires: C++11
 */
 
 
@@ -20,15 +24,16 @@
 #include<cmath>  //for sqrt function
 #include<assert.h>
 
-/** \This function generates a 1003 character list of prime numbers 
-   
-    This function loops through numbers and analyzes if they are prime or not.
-    It then takes all the numbers deemed as primes and adds them to the string
-    of primes. The loop runs until there are 1000 characters in the string
-    
-
-    @return std::string
-*/
+/** 
+ * This function generates a 1003 character list of prime numbers
+ *
+ * This function loops through numbers and analyzes if they are prime or not.
+ * It then takes all the numbers deemed as primes and adds them to the string
+ * of primes. The loop runs until there are 1000 characters in the string
+ *
+ *
+ * @return std::string
+ */
 std::string get_concatenated_primes()
 {
    std::string concat_primes = "23";
@@ -44,19 +49,35 @@ std::string get_concatenated_primes()
       if (flag == 0)
 	concat_primes =
 	  concat_primes + std::to_string(i);
-   }
- std:: cout << concat_primes.length() << std::endl;
- std:: cout << concat_primes << std::endl;
-          
+   }         
     return concat_primes.substr(0, 1000);
 }
 
-
-std::string get_slice_of_5(const std::string & primes, const int index)
+/**
+ * this function is used to get a slice of 5 digits from the concatenated
+ * prime string
+ */
+std::string get_slice_of_5(const std::string & primes, const int index) 
 {
+
+// initialize string which will hold the slice of 5
     std::string ret = "";
-    //Complete this function
-    return ret;
+
+/**
+ * for loop which adds digits from the concatenated prime string to the
+ * slice of five string which will be returned
+ * loop ensures that a max of 5 digits will be returned and that the boundary
+ * of 1000 will not be passed.
+ */
+    for (int i = index; (i < (index + 5) && i < 1000); i++)
+    {
+
+// adding digits to slice of 5
+	    ret += primes[i];
+    } 
+
+// returning slice of 5
+   return ret;
 }
 
 int main(int argc, char *argv[]){
